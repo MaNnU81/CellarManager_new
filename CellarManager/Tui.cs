@@ -161,6 +161,7 @@ namespace CellarManager
         private void DeleteBeverage()
         {
             Console.WriteLine("Inserisci il numero della bevanda da eliminare");
+            ListBeverages();    
             var res = int.TryParse(Console.ReadLine(), out int index) ;
             if (res)
             {
@@ -172,6 +173,7 @@ namespace CellarManager
         {
             Console.WriteLine("Inserisci il nome della bevanda da ricercare");
             var name = Console.ReadLine();
+
             var res = _logic.GetBeverages().Where(b => b.Name.ToLower().Contains(name.ToLower())).ToList();
             if (res.Count == 0)
             {

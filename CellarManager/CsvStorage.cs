@@ -10,6 +10,7 @@ namespace CellarManager
     internal class CsvStorage : IStorage
     {
         public List<Beverage> LoadAllBeverages()
+
         {
             if (!File.Exists("beverages.csv"))
             {
@@ -42,7 +43,7 @@ namespace CellarManager
                         Country = parts[3],
                         Year = int.Parse(parts[4]),
                         Type = (WineType)Enum.Parse(typeof(WineType), parts[5]),
-                        Grape = parts[6]
+                        Grape = parts[7]
                     };
                     beverages.Add(wine);
                 }

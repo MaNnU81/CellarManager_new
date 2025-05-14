@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CellarManager.model
 {
-    internal class Beverage
+    internal abstract class Beverage
     {
         //public int Id { get; set; } 
         public required string Name { get; set; }
@@ -41,5 +41,7 @@ namespace CellarManager.model
         {
             return $"{Name},{Alcohol},{Country},{Year}";
         }
+
+        public abstract JsonBeverage ToJsonBeverage();  
     }
 }
